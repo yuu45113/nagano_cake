@@ -1,16 +1,15 @@
 class CreateOrders < ActiveRecord::Migration[6.1]
   def change
     create_table :orders do |t|
-      
-      t.integer  :customer_id
-      t.string   :name
-      t.string   :address
-      t.string   :postal_code
-      t.integer  :postage
-      t.integer  :amounts_billed
-      t.integer  :payment_method
-      t.datetime :created_at
-      t.datetime :updated_at
+
+      t.integer  :customer_id, null: false
+      t.string   :name, null: false
+      t.string   :address, null: false
+      t.string   :postal_code, null: false
+      t.integer  :postage, null: false
+      t.integer  :amounts_billed, null: false
+      t.integer  :payment_method, null: false, default: 0
+
 
       t.timestamps
     end
