@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="mt-3 mb-3">
+    <span class="bg-light ml-5 px-1">
+      <strong><%= @customer.last_name %> <%= @customer.first_name %></strong>さんの会員情報編集
+    </span>
+  </div>
+
+  <div class="row">
+    <div class="col-2 mt-5">
+      <%= form_with model: @customer, url: admin_customer_path(@customer.id), method: :patch do |f| %>
+        <div class="mt-3">
+          会員ID
+        </div>
+        <div class="mt-3">
+           <%= f.label :氏名 %>
+        </div>
+        <div class="mt-3">
+          <%= f.label :フリガナ %>
+        </div>
+        <div class="mt-3">
+          <%= f.label :郵便番号 %>
+        </div>
+        <div class="mt-3">
+          <%= f.label :住所 %>
+        </div>
+        <div class="mt-3">
+          <%= f.label :電話番号 %>
+        </div>
+        <div class="mt-3">
+          <%= f.label :メールアドレス %>
+        </div>
+        <div class="mt-3">
+          <%= f.label :会員ステータス %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="col-10 mt-5">
+      <%= form_with model: @customer, url: admin_customer_path(@customer.id), method: :patch do |f| %>
+        <div class="mt-3">
+          <%= @customer.id %>
+        </div>
+        <div class="mt-3">
+          <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %> <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+        </div>
+        <div class="mt-3">
+          <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana" %> <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" %>
+        </div>
+        <div class="mt-3">
+          <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code" %>
+        </div>
+        <div class="mt-3">
+          <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
+        </div>
+        <div class="mt-3">
+          <%= f.text_field :telephone_number, autofocus: true, autocomplete: "telephone_number" %>
+        </div>
+        <div class="mt-3">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+        <div class="mt-3">
+          <%= f.radio_button :is_deleted, false %>
+          <%= f.label :有効 %>
+          <%= f.radio_button :is_deleted, true %>
+          <%= f.label :無効 %>
+        </div>
+        <div class="mt-5">
+          <%= f.submit "変更を保存", class: "btn btn-lr btn-success" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
