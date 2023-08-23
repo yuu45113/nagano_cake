@@ -27,6 +27,7 @@
         <%= form_with model: @cart_items, url: cart_items_path do |f| %>
           <div class="mt-5 ml-5">
             <%= f.select :amount, *[1..10] %>
+            <%= f.hidden_field :item_id, :value => @item.id %>
             <%= f.submit "カートに入れる", class: "btn  btn-success ml-3" %>
           </div>
         <% end %>

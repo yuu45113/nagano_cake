@@ -5,9 +5,9 @@
         <span class="bg-light ml-5 px-2 mr-5">
           <strong>商品一覧</strong>
         </span>
-        <%= link_to new_admin_item_path, class: " mt-5 ml-5" do %>
-        <i class="fa-solid fa-circle-plus"></i>
-        <% end %>
+	      <%= link_to new_admin_item_path, class: " mt-5 ml-5 " do %>
+	        <i class="fa-solid fa-circle-plus float-right"></i>
+	      <% end %>
       </div>
 
       <table class= "table">
@@ -34,9 +34,12 @@
           <% end %>
         </tbody>
       </table>
-      <div>
-        <%= paginate @items %>
-      </div>
     </div>
   </div>
-</diV>
+
+  <div class="row justify-content-center">
+    <div class="mt-5">
+      <%= paginate @items %>
+    </div>
+  </div>
+</div>

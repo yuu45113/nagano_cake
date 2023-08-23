@@ -50,32 +50,32 @@
                 ログアウト
                 <% end %>
               </li>
-              
+
             <% elsif admin_signed_in? %>
               <li>
                 <%= link_to admin_items_path, class: "nav-link text-light" do %>
                 商品一覧
                 <% end %>
               </li>
-                
+
               <li>
                 <%= link_to admin_customers_path, class: "nav-link text-light" do %>
                 会員一覧
                 <% end %>
               </li>
-                
+
               <li>
                 <%= link_to admin_root_path, class: "nav-link text-light" do %>
                 注文履歴一覧
                 <% end %>
               </li>
-                
+
               <li class="nav-item">
                 <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link text-light" do %>
                 ログアウト
                 <% end %>
               </li>
-              
+
             <% else %>
 
               <li class="nav-item">
@@ -111,8 +111,8 @@
     <main>
     <%= yield %>
     </main>
-    <footer>
-      <div class="container mt-5">
+    <footer style="height: 60px; width: 100%; position: absolute; bottom: 0;" class="bg-dark" >
+      <div class="container">
         <div class="row">
           <div class="mx-auto">
           </div>

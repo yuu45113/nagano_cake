@@ -25,9 +25,9 @@ Rails.application.routes.draw do
     patch "/customers/withdrawal"=>"customers#withdrawal"
     resources :items, only: [:index, :show]
     resources :cart_items, only: [:create, :index, :update, :destroy]
-    resources :orders, only: [:new, :create, :index, :show]
-    get "/orders/confirm"=>"orders#confirm"
     get "/orders/complete"=>"orders#complete"
+    resources :orders, only: [:new, :create, :index, :show]
+    post "/orders/confirm"=>"orders#confirm"
     get "/home/about"=>"homes#about",as:"about"
   end  
 end
