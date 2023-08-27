@@ -66,25 +66,27 @@
       <strong>注文内容</strong>
   </div>
   <div class="row">
-    <table class="table table-bordered">
-      <thead class="bg-light">
-        <tr>
-          <th class="col-6">商品</th>
-          <th class="col-2">単価（税込）</th>
-          <th class="col-1">個数</th>
-          <th class="col-1">小計</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @order_details.each do |order_detail| %>
+    <div class="col-8">
+      <table class="table table-bordered">
+        <thead class="bg-light">
           <tr>
-            <td><%= order_detail.item.name %></td>
-            <td><%= ((order_detail.item.price*1.1).floor).to_s(:delimited) %></td>
-            <td><%= order_detail.amount %></td>
-            <td><%= ((order_detail.item.price*1.1).floor*order_detail.amount).to_s(:delimited) %></td>
+            <th class="col-6">商品</th>
+            <th class="col-2">単価（税込）</th>
+            <th class="col-1">個数</th>
+            <th class="col-1">小計</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <% @order_details.each do |order_detail| %>
+            <tr>
+              <td><%= order_detail.item.name %></td>
+              <td><%= ((order_detail.item.price*1.1).floor).to_s(:delimited) %></td>
+              <td><%= order_detail.amount %></td>
+              <td><%= ((order_detail.item.price*1.1).floor*order_detail.amount).to_s(:delimited) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

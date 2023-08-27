@@ -1,38 +1,65 @@
 <div class="container">
-  <div class="row">
-    <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
-      <p>
+  <div class="row justify-content-center">
+    <div class="col-8 mt-3 ">
+      <span class="bg-light px-2">
         <strong>ログイン</strong>
-      </p>
+      </span>
+    </div>
+  </div>
+  <div class="row justify-content-center">  
+    <div class="col-7 mt-4">
+      <span class="bg-light px-2">
+        <strong>会員の方はこちらからログイン</strong>
+      </span>
+    </div>
+  </div>
 
-      <p>
-        <strong>会員</strong>の<strong>方</strong>はこちらからログイン
-      </p>
-
-      <%= form_with model: @customer, url: customer_session_path do |f| %>
-        <div class="field">
-          <%= f.label :メールアドレス %>  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <%= form_with model: @customer, url: customer_session_path do |f| %>
+    <div class="field mt-3 text-left">
+      <div class="row justify-content-center">
+        <div class="col-2">
+          <%= f.label :メールアドレス %>
         </div>
-
-        <div class="field">
-          <%= f.label :パスワード %> <%= f.password_field :password, autocomplete: "current-password" %>
+        <div class="col-3">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
-
-        <div class="actions">
-          <%= f.submit "ログイン", class: "btn btn-sm btn-primary" %>
-        </div>
-      <% end %>
-
-      <p>
-        <strong>会員登録</strong>がお<strong>済</strong>みでない<strong>方</strong>
-      </p>
-
-      <div>
-        <%= link_to new_customer_registration_path do %>
-        こちら
-        <% end %>
-        から新規登録を行ってください。
       </div>
+    </div>
+
+    <div class="field mt-3 text-left">
+      <div class="row justify-content-center">
+        <div class="col-2">
+          <%= f.label :パスワード %>
+        </div>
+        <div class="col-3">
+          <%= f.password_field :password, autocomplete: "current-password" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <div class="row justify-content-center">
+        <div class="col-2 mt-4">
+          <%= f.submit "ログイン", class: "btn btn-block btn-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+      
+  <div class="row justify-content-center">  
+    <div class="col-7 mt-5">
+      <span class="bg-light px-2">
+        <strong>会員登録がお済みでない方</strong>
+      </span>
+    </div>
+  </div>
+  
+  <div class="row justify-content-center">  
+    <div class="col-5 mt-3">
+      <%= link_to new_customer_registration_path do %>
+      こちら
+      <% end %>
+      から新規登録を行ってください。
     </div>
   </div>
 </div>

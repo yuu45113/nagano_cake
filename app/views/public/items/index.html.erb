@@ -22,7 +22,7 @@
           <% end %>
         </div>
         <div class="mt-3 mr-3 mb-3">
-          ¥<%= item.price %>
+          ¥<%= (item.price).to_s(:delimited) %>
         </div>
       </div>
     <% end %>

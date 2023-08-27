@@ -22,7 +22,7 @@
         </div>
 
         <div class="mb-3">
-          ¥<%=(@item.price*1.1).floor %>(税込)
+          ¥<%= ((@item.price*1.1).floor).to_s(:delimited) %>(税込)
         </div>
         <%= form_with model: @cart_items, url: cart_items_path do |f| %>
           <div class="mt-5 ml-5">

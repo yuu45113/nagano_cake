@@ -1,22 +1,43 @@
 <div class="container">
-  <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
-    <h2>管理者ログイン</h2>
-    <%= form_with model: @admin, url: admin_session_path do |f| %>
-      <div class="field">
-        <%= f.label :メールアドレス %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="row justify-content-center">
+    <div class="col-8 mt-3">
+      <span class="bg-light px-2">
+        <strong>管理者ログイン</strong>
+      </span>
+    </div>
+  </div>
+
+  <%= form_with model: @admin, url: admin_session_path do |f| %>
+    <div class="field mt-5 text-left">
+      <div class="row justify-content-center">
+        <div class="col-2">
+          <%= f.label :メールアドレス %>
+        </div>
+        <div class="col-3">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
       </div>
+    </div>
 
-      <div class="field">
-        <%= f.label :パスワード %>
-        <%= f.password_field :password, autocomplete: "current-password" %>
+    <div class="field mt-3 text-left">
+      <div class="row justify-content-center">
+        <div class="col-2">
+          <%= f.label :パスワード %>
+        </div>
+        <div class="col-3">
+          <%= f.password_field :password, autocomplete: "current-password" %>
+        </div>
       </div>
+    </div>
 
 
-      <div class="actions">
-        <%= f.submit "ログイン", class: "btn btn-sm btn-primary" %>
+    <div class="actions">
+      <div class="row justify-content-center">
+        <div class="col-2 mt-4 ml-5">
+          <%= f.submit "ログイン", class: "btn btn-sm btn-block btn-primary" %>
+        </div>
       </div>
-    <% end %>
-
-<%= render "admin/shared/links" %>
+    </div>
+  <% end %>
+  <%= render "admin/shared/links" %>
+</div>
